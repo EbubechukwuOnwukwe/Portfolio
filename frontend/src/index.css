@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0B0D10;
+    /* Replace with your color */
+}
+
+/* Ensure the root element fills the screen */
+#root {
+    min-height: 100vh; }
