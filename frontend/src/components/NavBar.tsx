@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+
+const MotionLink = motion(Link);
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +20,10 @@ const NavBar = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Projects', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -35,12 +38,12 @@ const NavBar = () => {
           <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
             <Bars3Icon className="h-7 w-7" />
           </button>
-          <div className="text-2xl font-bold text-[#40E0FF] bg-[#151A21] p-1.75 rounded-xl">EO</div>
+          <Link to="/" className="text-2xl font-bold text-[#40E0FF] bg-[#151A21] p-1.75 rounded-xl">EO</Link>
         </div>
 
         {/* Tablet Layout: Logo left, Nav button right */}
         <div className="hidden md:flex lg:hidden items-center justify-between w-full px-5">
-          <div className="text-2xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></div>
+          <Link to="/" className="text-2xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
           <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
             <Bars3Icon className="h-9 w-9" />
           </button>
@@ -48,17 +51,17 @@ const NavBar = () => {
 
         {/* Desktop Layout: Logo left, Nav options right */}
         <div className="hidden lg:flex items-center justify-between w-full">
-          <div className="text-2xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></div>
+          <Link to="/" className="text-2xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
           <div className="flex space-x-8">
             {navLinks.map((link, index) => (
-              <a 
+              <Link 
                 key={index} 
-                href={link.href}
+                to={link.href}
                 className="relative text-[#E9EEF5] text-2xl group transition-colors duration-300"
               >
                 {link.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -79,12 +82,12 @@ const NavBar = () => {
               <button onClick={() => setIsOpen(false)} className="focus:outline-none">
                 <XMarkIcon className="h-7 w-7" />
               </button>
-              <div className="text-2xl font-bold">EO</div>
+              <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-bold">EO</Link>
             </div>
 
             {/* Overlay Header: Logo left, Button right (Tablet position) */}
             <div className="hidden md:flex lg:hidden items-center justify-between w-full p-7">
-              <div className="text-2xl font-bold">EO</div>
+              <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-bold">EO</Link>
               <button onClick={() => setIsOpen(false)} className="focus:outline-none">
                 <XMarkIcon className="h-9 w-9" />
               </button>
@@ -93,9 +96,9 @@ const NavBar = () => {
             {/* Center Links */}
             <div className="grow flex flex-col items-center justify-center space-y-8">
               {navLinks.map((link, index) => (
-                <motion.a 
+                <MotionLink 
                   key={index} 
-                  href={link.href} 
+                  to={link.href} 
                   onClick={() => setIsOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -105,7 +108,7 @@ const NavBar = () => {
                 >
                   {link.name}
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
-                </motion.a>
+                </MotionLink>
               ))}
             </div>
           </motion.div>
