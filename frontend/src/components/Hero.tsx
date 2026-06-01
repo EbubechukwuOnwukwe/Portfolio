@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <section className="relative w-[95%] mx-auto text-[#E9EEF5] overflow-hidden py-10 md:py-20 md:px-[3%]">
         <div className="relative z-10">
-        <h1 className="text-6xl font-bold text-left lg:text-7xl"><span className="hidden md:block">I AM A </span>FULL-STACK <span className='md:block'>DEV<span className='hidden md:inline'>ELOPER</span></span></h1>
-        <h2 className="text-4xl font-bold text-left my-3 md:hidden">building seamless...</h2>
+        <h1 className="text-6xl font-bold text-left lg:text-7xl lg:inline-block"><span className="hidden md:block">I AM A </span>FULL-STACK <span className='md:block'>DEV<span className='hidden md:inline'>ELOPER</span></span></h1>
+        <h2 className="text-4xl font-bold text-left my-3 md:hidden xl:block">building seamless digital experiences</h2>
         <p className="text-2xl text-[#94A3B8] text-left mr-6 md:my-3 md:w-[60%]">React | Django | Cloud Architectures. Making complexity intuitive.</p>
         <div className='md:w-[45%] xl:flex xl:gap-8'>
         <motion.button
