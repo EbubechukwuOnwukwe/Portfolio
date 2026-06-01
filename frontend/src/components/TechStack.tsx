@@ -26,8 +26,8 @@ const TechStack = () => {
   }, []);
 
   return (
-    <section className='text-[#E9EEF5] mt-15'>
-      <h1 className='text-4xl font-semibold text-left mx-3 my-4'>Tech Stack</h1>
+    <section className='text-[#E9EEF5] mt-5'>
+      <h1 className='text-4xl font-semibold text-left mx-3 my-4 md:text-5xl md:my-5 md:font-bold md:mx-6 lg:text-6xl xl:mx-5 xl:my-7'>Tech Stack</h1>
       <div className="w-full bg-slate-950 py-10 overflow-hidden border-y border-slate-800">
         <motion.div
           className="flex"
@@ -44,14 +44,14 @@ const TechStack = () => {
           {[...technologies, ...technologies].map((tech, index) => {
             const Icon = tech.icon;
             return (
-              <div key={index} className="flex flex-col items-center gap-3 min-w-30">
+              <div key={index} className="flex flex-col items-center gap-3 min-w-30 xl:gap-4 md:min-w-35 lg:min-w-50">
                 <motion.div
                   whileHover={{ scale: 1.2, color: "#40E0FF" }}
-                  className="text-slate-400 text-5xl transition-colors duration-300"
+                  className="text-slate-400 text-5xl transition-colors duration-300 md:text-7xl lg:text-8xl"
                 >
                   <Icon />
                 </motion.div>
-                <span className="text-slate-500 text-sm font-medium">{tech.name}</span>
+                <span className="text-slate-500 text-sm font-medium md:text-xl lg:text-2xl">{tech.name}</span>
               </div>
             );
           })}

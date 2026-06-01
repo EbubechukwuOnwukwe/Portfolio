@@ -7,8 +7,19 @@ body {
     height: 100%;
     background-color: #0B0D10;
     /* Replace with your color */
-}
+    /* Hide scrollbar for Chrome, Safari, Opera, and newer Edge */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    
+        /* Hide scrollbar for Firefox */
+        scrollbar-width: none;
+    
+        /* Hide scrollbar for legacy IE and Edge */
+        -ms-overflow-style: none;
+    }
 
 /* Ensure the root element fills the screen */
 #root {
-    min-height: 100vh; }
+    min-height: 100vh; 
+}

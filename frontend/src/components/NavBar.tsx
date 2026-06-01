@@ -30,7 +30,7 @@ const NavBar = () => {
     <motion.nav 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-4 text-white relative z-40 pt-4 md:pt-8"
+      className="p-4 text-white relative z-40 pt-4 md:pt-8 scroll"
     >
       <div className="container mx-auto flex items-center justify-between">
         {/* Mobile Layout: Nav button left, Logo right */}
@@ -43,21 +43,21 @@ const NavBar = () => {
 
         {/* Tablet Layout: Logo left, Nav button right */}
         <div className="hidden md:flex lg:hidden items-center justify-between w-full px-5">
-          <Link to="/" className="text-2xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
+          <Link to="/" className="text-3xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
           <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
-            <Bars3Icon className="h-9 w-9" />
+            <Bars3Icon className="h-10 w-10" />
           </button>
         </div>
 
         {/* Desktop Layout: Logo left, Nav options right */}
         <div className="hidden lg:flex items-center justify-between w-full">
-          <Link to="/" className="text-2xl font-bold">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
+          <Link to="/" className="text-3xl font-bold xl:text-4xl">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
           <div className="flex space-x-8">
             {navLinks.map((link, index) => (
               <Link 
                 key={index} 
                 to={link.href}
-                className="relative text-[#E9EEF5] text-2xl group transition-colors duration-300"
+                className="relative text-[#E9EEF5] text-3xl group transition-colors duration-300 xl:text-4xl"
               >
                 {link.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
@@ -87,9 +87,9 @@ const NavBar = () => {
 
             {/* Overlay Header: Logo left, Button right (Tablet position) */}
             <div className="hidden md:flex lg:hidden items-center justify-between w-full p-7">
-              <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-bold">EO</Link>
+              <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-bold md:text-3xl">EO</Link>
               <button onClick={() => setIsOpen(false)} className="focus:outline-none">
-                <XMarkIcon className="h-9 w-9" />
+                <XMarkIcon className="h-10 w-10" />
               </button>
             </div>
 
@@ -104,7 +104,7 @@ const NavBar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
-                  className="relative text-[#E9EEF5] text-3xl font-semibold group transition-colors duration-300"
+                  className="relative text-[#E9EEF5] text-3xl font-semibold group transition-colors duration-300 md:text-4xl"
                 >
                   {link.name}
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
