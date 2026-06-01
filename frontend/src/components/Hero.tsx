@@ -14,7 +14,7 @@ const Hero = () => {
         <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="mt-7 text-3xl block py-3 w-full font-bold rounded-full bg-[#8B5CF6] shadow-[0_0_30px_#8B5CF6] md:py-5">
+            className="mt-7 text-3xl block py-3 w-full font-bold rounded-full bg-[#8B5CF6] md:shadow-[0_0_30px_#8B5CF6] md:py-5">
             <span className='hidden md:inline'>SEE MY </span>WORK
         </motion.button>
         <motion.button
