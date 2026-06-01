@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
 
         {/* Architecture Image - Adjusted left offset for lg and xl screens to maintain visual balance */}
-        <div className="hidden md:block absolute right-0 top-0 h-full w-full pointer-events-none z-0 lg:w-[70%] lg:right-4 xl:w-[50%] xl:h-[100%] xl:right-5 xl:top-10">
+        <div className="hidden md:block absolute right-0 top-0 h-full w-full pointer-events-none z-0 lg:w-[70%] lg:right-4 xl:w-[50%] xl:h-full xl:right-5 xl:top-10">
             <img 
                 src={architecture} 
                 alt="Architecture" 
