@@ -4,6 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import resume from '../assets/EbubechukwuOnwukwe-Resume.pdf';
+import Profile from '../assets/EO.png';
 
 
 const Footer = () => {
@@ -16,46 +17,75 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: BsTwitterX, href: 'https://x.com/Ebubechukw32885' },
-    { icon: FaGithub, href: 'https://github.com/EbubechukwuOnwukwe' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ebubechukwu-onwukwe' },
-    { icon: MdOutlineEmail, href: 'mailto:ebube5298@gmail.com' },
+    { name: 'Twitter / X', icon: BsTwitterX, href: 'https://x.com/Ebubechukw32885' },
+    { name: 'GitHub', icon: FaGithub, href: 'https://github.com/EbubechukwuOnwukwe' },
+    { name: 'Linkedin', icon: FaLinkedin, href: 'https://www.linkedin.com/in/ebubechukwu-onwukwe' },
+    { name: 'Email', icon: MdOutlineEmail, href: 'mailto:ebube5298@gmail.com' },
   ];
 
   return (
     <footer className="text-[#E9EEF5] mt-6 bg-[#151A21] py-10 border-t-4 border-slate-800">
-        <h1 className="text-2xl font-semibold text-center">Ebubechukwu Onwukwe <span className="hidden">/ Full-Stack</span></h1>
-        <p className="text-center text-xl mt-4">
-          ©{new Date().getFullYear()} Ebubechukwu Onwukwe. <span className='block'>All rights reserved.</span>
-        </p>
-        <div>
-          <h1 className="text-3xl text-center mt-8 mb-4 font-semibold">Quick Links</h1>
-          <div className="flex flex-col items-center">
-            {navLinks.map((link) => 
-              link.isDownload ? (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  download 
-                  className='relative block w-fit text-2xl mb-2 group transition-colors duration-300 text-center'
-                >
-                  {link.name}
-                  <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
-                </a>
-              ) : (
-                <Link 
-                  key={link.name} 
-                  to={link.href} 
-                  className='relative block w-fit text-2xl mb-2 group transition-colors duration-300 text-center'
-                >
-                  {link.name}
-                  <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
-                </Link>
-              )
-            )}
+      <div className='md:flex md:gap-6 md:justify-center'>
+        <img src={Profile}
+              alt="Profile"
+              className='hidden md:block h-50 w-50 rounded-4xl shadow-[0_0_20px_#8B5CF6]' />
+        <div className='md:my-5'>
+          <h1 className="text-2xl font-semibold text-center md:text-4xl md:font-semibold md:text-left">Ebube<span className='md:hidden'>chukwu</span> Onwukwe <span className='hidden md:inline text-[#767b83]'>/ Full-Stack</span> <span className="hidden">/ Full-Stack</span></h1>
+          <p className="text-center text-xl mt-4 md:text-2xl md:text-left md:text-[#767b83] md:mt-6">
+            © {new Date().getFullYear()} Ebube<span className='md:hidden'>chukwu</span> Onwukwe. <span className='block md:mt-1'>All rights reserved.</span>
+          </p>
           </div>
         </div>
-        <div className='flex justify-center gap-6 text-4xl mt-8'>
+
+        <div className='md:flex md:justify-center md:gap-45 lg:gap-65 mt-15'>
+          <div className='flex flex-col items-center md:items-start'>
+            <h1 className="text-3xl text-center mb-4 font-semibold md:text-left">Quick Links</h1>
+            <div className="flex flex-col items-center md:items-start">
+              {navLinks.map((link) => 
+                link.isDownload ? (
+                  <a 
+                    key={link.name} 
+                    href={link.href} 
+                    download 
+                    className='relative block w-fit text-2xl mb-2 group transition-colors duration-300 text-center md:text-left'
+                  >
+                    {link.name}
+                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
+                  </a>
+                ) : (
+                  <Link 
+                    key={link.name} 
+                    to={link.href} 
+                    className='relative block w-fit text-2xl mb-2 group transition-colors duration-300 text-center md:text-left'
+                  >
+                    {link.name}
+                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+
+          <div className='hidden md:flex flex-col items-start'>
+            <h1 className="text-3xl mb-4 font-semibold">Connect & Explore</h1>
+            <div className="flex flex-col items-start">
+              {socialLinks.map((social) => (
+                <a 
+                  key={social.name} 
+                  href={social.href} 
+                  target='_blank' 
+                  rel='noopener noreferrer' 
+                  className='relative block w-fit text-2xl mb-2 group transition-colors duration-300'
+                >
+                  {social.name}
+                  <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className='flex justify-center gap-6 text-4xl mt-8 md:hidden'>
             {socialLinks.map((social, index) => (
               <motion.a key={index} 
                         href={social.href} 
