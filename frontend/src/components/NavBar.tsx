@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -7,6 +7,7 @@ const MotionLink = motion(Link);
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (isOpen) {
@@ -53,16 +54,19 @@ const NavBar = () => {
         <div className="hidden lg:flex items-center justify-between w-full">
           <Link to="/" className="text-3xl font-bold xl:text-4xl">Ebubechukwu Onwukwe<span className='text-[#40E0FF]'>/Dev</span></Link>
           <div className="flex space-x-8">
-            {navLinks.map((link, index) => (
-              <Link 
-                key={index} 
-                to={link.href}
-                className="relative text-[#E9EEF5] text-3xl group transition-colors duration-300 xl:text-4xl"
-              >
-                {link.name}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+            {navLinks.map((link, index) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <Link 
+                  key={index} 
+                  to={link.href}
+                  className="relative text-[#E9EEF5] text-3xl group transition-colors duration-300 xl:text-4xl"
+                >
+                  {link.name}
+                  <span className={`absolute left-0 -bottom-1 h-0.5 transition-all duration-300 ${isActive ? 'w-full bg-[#8B5CF6]' : 'w-0 bg-[#40E0FF] group-hover:w-full'}`} />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -95,21 +99,24 @@ const NavBar = () => {
 
             {/* Center Links */}
             <div className="grow flex flex-col items-center justify-center space-y-8">
-              {navLinks.map((link, index) => (
-                <MotionLink 
-                  key={index} 
-                  to={link.href} 
-                  onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ delay: index * 0.1 + 0.3 }}
-                  className="relative text-[#E9EEF5] text-3xl font-semibold group transition-colors duration-300 md:text-4xl"
-                >
-                  {link.name}
-                  <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#40E0FF] transition-all duration-300 group-hover:w-full" />
-                </MotionLink>
-              ))}
+              {navLinks.map((link, index) => {
+                const isActive = location.pathname === link.href;
+                return (
+                  <MotionLink 
+                    key={index} 
+                    to={link.href} 
+                    onClick={() => setIsOpen(false)}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.1 + 0.3 }}
+                    className="relative text-[#E9EEF5] text-3xl font-semibold group transition-colors duration-300 md:text-4xl"
+                  >
+                    {link.name}
+                    <span className={`absolute left-0 -bottom-1 h-0.5 transition-all duration-300 ${isActive ? 'w-full bg-[#8B5CF6]' : 'w-0 bg-[#40E0FF] group-hover:w-full'}`} />
+                  </MotionLink>
+                );
+              })}
             </div>
           </motion.div>
         )}
