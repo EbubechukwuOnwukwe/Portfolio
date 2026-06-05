@@ -9,7 +9,7 @@ const PROJECTS_DATA = [
   {
     title: "PrimeStone LP Updated",
     tags: ["React", "Django", "PostgreSQL"],
-    viewLink: "https://prime-stone-one.vercel.app/",
+    viewLink: "https://prime-stone-one.vercel.app",
     codeLink: "",
     description: "A full-featured e-commerce solution with payment integration and real-time inventory.",
     topTag: "Full-Stack",
@@ -18,7 +18,7 @@ const PROJECTS_DATA = [
   {
     title: "PrimeStone LP",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    viewLink: "https://primestonelp.com/",
+    viewLink: "https://primestonelp.com",
     codeLink: "",
     description: "Real-time monitoring system for connected industrial devices with data visualization.",
     topTag: "Full-Stack",
@@ -75,10 +75,10 @@ const Projects = () => {
               ))}
             </div>
             <div className="text-2xl flex gap-16 justify-center text-[#40E0FF] font-semibold">
-              <a href={project.viewLink} className="mt-1">VIEW</a>
+              <a href={project.viewLink} target="_blank" rel="noopener noreferrer" className="mt-1">VIEW</a>
               <p className="text-[#151A21] p-0 m-0 text-3xl">|</p>
               {project.codeLink ? (
-                <a href={project.codeLink} target="_blank" rel="noreferrer" className="mt-1">CODE</a>
+                <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="mt-1">CODE</a>
               ) : (
                 <span className="mt-1 line-through opacity-40 cursor-not-allowed">CODE</span>
               )}

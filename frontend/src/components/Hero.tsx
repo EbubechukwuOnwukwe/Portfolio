@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import architecture from '../assets/architecture.png';
 
+const MotionLink = motion(Link);
 
 
 const Hero = () => {
@@ -11,20 +13,20 @@ const Hero = () => {
         <h2 className="text-4xl font-bold text-left my-3 md:hidden xl:block">building seamless digital experiences</h2>
         <p className="text-2xl text-[#94A3B8] text-left mr-6 md:my-3 md:w-[60%]">React | Django | Cloud Architectures. Making complexity intuitive.</p>
         <div className='md:w-[45%] xl:flex xl:gap-8'>
-        <motion.a
-            href="/projects"
+        <MotionLink
+            to="/projects"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="mt-7 text-3xl block py-3 w-full font-bold rounded-full bg-[#8B5CF6] md:shadow-[0_0_30px_#8B5CF6] md:py-5 text-center">
             <span className='hidden md:inline'>SEE MY </span>WORK
-        </motion.a>
-        <motion.a
-            href="/contact"
+        </MotionLink>
+        <MotionLink
+            to="/contact"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="mt-7 text-3xl block py-3 w-full font-bold rounded-full text-[#40E0FF] border-[#40E0FF] border-3 md:py-5 text-center">
             <span className='hidden md:inline'>LET'S </span>TALK
-        </motion.a>
+        </MotionLink>
         </div>
         </div>
 
