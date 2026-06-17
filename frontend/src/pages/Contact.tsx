@@ -79,19 +79,7 @@ const Contact = () => {
           {status === 'submitting' ? 'Sending...' : 'SEND MESSAGE'}
         </motion.button>
       </form>
-
-      <AnimatePresence>
-        {status === 'success' && (
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="mt-4 text-cyan-400 text-center"
-          >
-            Message sent successfully! I'll get back to you soon.
-          </motion.p>
-        )}
-      </AnimatePresence>
+    
     </section>
   );
 };
