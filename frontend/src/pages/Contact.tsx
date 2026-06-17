@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   
@@ -79,7 +79,6 @@ const Contact = () => {
           {status === 'submitting' ? 'Sending...' : 'SEND MESSAGE'}
         </motion.button>
       </form>
-    
     </section>
   );
 };
