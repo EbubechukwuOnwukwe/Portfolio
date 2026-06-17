@@ -24,6 +24,11 @@ const Footer = () => {
     };
   }, [isPrivacyOpen]);
 
+  // Scroll to the top of the page whenever the route path changes
+  useEffect(() => { // eslint-disable-next-line
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
