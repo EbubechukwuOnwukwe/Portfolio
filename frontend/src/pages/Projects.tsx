@@ -2,10 +2,20 @@ import { useState } from "react";
 import { motion } from 'framer-motion';
 import PLP from "../assets/PLP.png";
 import PLPUP from "../assets/PLPUP.png";
+import Beacon from "../assets/Beacon.png";
 
 const CATEGORIES = ["All", "React", "Django", "Full-Stack", "Mobile"];
 
 const PROJECTS_DATA = [
+  {
+    title: "The Beacon Academy",
+    tags: ["React", "Tailwind", "Framer-Motion", "Web3Forms"],
+    viewLink: "https://thebeaconacademy.vercel.app/",
+    codeLink: "",
+    description: "An online school website for The Beacon Academy.",
+    topTag: "React",
+    image: Beacon,
+  },
   {
     title: "PrimeStone LP Updated",
     tags: ["React", "Tailwind", "Django", "PostgreSQL"],
