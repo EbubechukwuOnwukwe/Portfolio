@@ -51,14 +51,14 @@ const About = () => {
 
 
       <div className="mt-10">
-      <div className="hidden md:flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5 items-center md:items-start">
         <img src={Profile}
         alt="profile" 
-        className="h-70 w-70 rounded-4xl shadow-[0_0_20px_#8B5CF6] xl:shadow-none lg:h-80 lg:w-80 xl:h-140 xl:w-140"
+        className="w-52 h-52 rounded-4xl shadow-[0_0_20px_#8B5CF6] object-cover md:h-70 md:w-70 lg:h-80 lg:w-80 xl:h-140 xl:w-140 xl:shadow-none flex-shrink-0"
         />
-        <p className="text-[20.5px] lg:text-[26px] xl:text-[33px]">
+        <p className="text-[17px] md:text-[20.5px] lg:text-[26px] xl:text-[33px] text-center md:text-left">
           <span className="xl:hidden">Ebubechukwu Onwukwe is a Full-Stack Developer driven by engineering precision and intuitive user experience. With a foundation in Computer Engineering, he specializes in building scalable web applications using React, Django, and PostgreSQL, crafting high-performance solutions that bridge complex technical requirements and seamless interfaces.</span>
-          <span className="md:hidden xl:inline">Ebubechukwu Onwukwe is a Full-Stack Developer driven by the intersection of engineering precision and intuitive user experience. With a solid foundation in Computer Engineering, he specializes in building scalable, robust web applications using React, Django, and PostgreSQL. I am passionate about crafting high-performance digital solutions that bridge the gap between complex technical requirements and seamless, user-centric interfaces.</span></p>
+          <span className="hidden xl:inline">Ebubechukwu Onwukwe is a Full-Stack Developer driven by the intersection of engineering precision and intuitive user experience. With a solid foundation in Computer Engineering, he specializes in building scalable, robust web applications using React, Django, and PostgreSQL. I am passionate about crafting high-performance digital solutions that bridge the gap between complex technical requirements and seamless, user-centric interfaces.</span></p>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-10">
