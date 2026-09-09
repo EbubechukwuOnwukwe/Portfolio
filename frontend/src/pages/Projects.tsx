@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import PLP from "../assets/PLP.png";
 import PLPUP from "../assets/PLPUP.png";
@@ -61,10 +61,29 @@ const PROJECTS_DATA = [
   },
 ];
 
+const isSafeUrl = (url: string): boolean => {
+  if (!url) return false;
+  try {
+    const parsed = new URL(url, window.location.origin);
+    return parsed.protocol === "http:" || parsed.protocol === "https:";
+  } catch {
+    return false;
+  }
+};
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("");
   const [tooltip, setTooltip] = useState<number | null>(null);
   const tooltipTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clear any pending tooltip timeout on unmount to avoid state updates on unmounted component
+  useEffect(() => {
+    return () => {
+      if (tooltipTimeout.current) {
+        clearTimeout(tooltipTimeout.current);
+      }
+    };
+  }, []);
 
   const filteredProjects = PROJECTS_DATA.filter((project) => {
     if (activeFilter === "" || activeFilter === "All") return true;
@@ -103,7 +122,7 @@ const Projects = () => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredProjects.map((project, index) => (
           <motion.div
-            key={index}
+            key={project.title}
             whileHover={{ scale: 1.02 }}
             className={`p-4 border-3 border-[#151A21] rounded-2xl transition-shadow duration-300 flex flex-col ${
               index % 2 === 0
@@ -136,16 +155,22 @@ const Projects = () => {
 
               {/* Buttons */}
               <div className="flex gap-2 font-bold text-sm lg:text-base">
-                <a
-                  href={project.viewLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center bg-[#40E0FF] text-[#0B0D10] py-2 px-2 lg:px-3 rounded-3xl whitespace-nowrap"
-                >
-                  VIEW LIVE
-                </a>
+                {isSafeUrl(project.viewLink) ? (
+                  <a
+                    href={project.viewLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center bg-[#40E0FF] text-[#0B0D10] py-2 px-2 lg:px-3 rounded-3xl whitespace-nowrap"
+                  >
+                    VIEW LIVE
+                  </a>
+                ) : (
+                  <span className="flex-1 text-center bg-[#40E0FF] text-[#0B0D10] opacity-40 py-2 px-2 lg:px-3 rounded-3xl whitespace-nowrap cursor-not-allowed">
+                    VIEW LIVE
+                  </span>
+                )}
 
-                {project.codeLink ? (
+                {project.codeLink && isSafeUrl(project.codeLink) ? (
                   <a
                     href={project.codeLink}
                     target="_blank"
