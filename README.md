@@ -6,7 +6,7 @@ A modern, fully responsive personal portfolio website built with React, TypeScri
 
 ## 🚀 Live Site
 
-> Deployed on **Vercel** — [View Live](https://http://ebubechukwuonwukwe.vercel.app/)
+> Deployed on **Vercel** — [View Live](https://ebubechukwuonwukwe.vercel.app/)
 
 ---
 
