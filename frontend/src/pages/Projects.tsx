@@ -5,17 +5,28 @@ import PLPUP from "../assets/PLPUP.png";
 import Beacon from "../assets/Beacon.png";
 import DS from "../assets/DueSpace.png";
 import NMA from "../assets/NMA.png";
+import CodeReviewer from "../assets/CodeReviwer.png";
 
 const CATEGORIES = ["All", "React", "Django", "Full-Stack", "Mobile"];
 
 const PROJECTS_DATA = [
   {
-    title: "NMA Voting System",
+    title: "CodeReview AI",
+    tags: ["React", "TypeScript", "Django", "Groq", "Python", "Tailwind"],
+    viewLink: "https://code-review-ai-vert.vercel.app/",
+    codeLink: "https://github.com/EbubechukwuOnwukwe/CodeReview-AI",
+    description: "An AI-powered code review platform utilizing a multi-agent pipeline (Requirements, Reviewer, Verifier, and Summary agents) to audit code and GitHub repositories for security vulnerabilities, bugs, and performance issues with automated false-positive verification.",
+    mobileDescription: "An AI-powered multi-agent code review system that audits repositories for security vulnerabilities, bugs, and performance issues.",
+    topTag: "Full-Stack",
+    image: CodeReviewer,
+  },
+  {
+    title: "Voting System",
     tags: ["React", "Bootstrap", "Django", "Django-REST-Framework", "PostgreSQL"],
     viewLink: "https://nma-voting-system.vercel.app/",
-    codeLink: "",
-    description: "Developed a secure web-based voting platform for the Nigerian Medical Association, designed to streamline elections, voter management, candidate administration, and result processing through a centralized system. The project was fully developed and completed before the deployment was suspended.",
-    mobileDescription: "A secure voting platform for the Nigerian Medical Association — handles elections, voter management, and results.",
+    codeLink: "https://github.com/EbubechukwuOnwukwe/Voting-System",
+    description: "Developed a secure web-based voting platform, designed to streamline elections, voter management, candidate administration, and result processing through a centralized system. It includes an AI voting summarizer for easy analysis of votes.",
+    mobileDescription: "A secure voting platform that handles elections, voter management, and results.",
     topTag: "Full-Stack",
     image: NMA,
   },
