@@ -52,7 +52,7 @@ const PROJECTS_DATA = [
   },
   {
     title: "PrimeStone LP Updated",
-    tags: ["React", "Tailwind", "Django", "PostgreSQL"],
+    tags: ["React", "Tailwind", "Django", "BrevoSend"],
     viewLink: "https://prime-stone-one.vercel.app",
     codeLink: "https://github.com/EbubechukwuOnwukwe/PrimeStone",
     description: "A refined client-facing platform featuring an intuitive, user-centric intake process that enables clients to precisely categorize their legal needs for more efficient consultation matching.",
